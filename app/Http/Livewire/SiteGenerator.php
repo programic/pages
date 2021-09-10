@@ -8,6 +8,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Concerns\InteractsWithForms;
@@ -22,6 +23,7 @@ class SiteGenerator extends Component implements HasForms
     public Site $site;
 
     public string $name = '';
+    public string $description = '';
     public string $slug = '';
     public bool $active = false;
     public string $fb_pixel = '';
@@ -39,6 +41,7 @@ class SiteGenerator extends Component implements HasForms
                 ->reactive()
                 ->afterStateUpdated(fn ($get, $set) => $set('slug', Str::slug($get('name')))),
             TextInput::make('slug')->required(),
+            Textarea::make('description'),
             Toggle::make('active'),
             TextInput::make('fb_pixel')->name('Facebook pixel id'),
             TextInput::make('google_tag_manager')->name('Google Tag manager id'),
@@ -86,6 +89,7 @@ class SiteGenerator extends Component implements HasForms
         }
 
         $this->name = $site->name;
+        $this->description = $site->description;
         $this->slug = $site->slug;
         $this->active = $site->active;
         $this->fb_pixel = $site->fb_pixel;
@@ -104,6 +108,7 @@ class SiteGenerator extends Component implements HasForms
     public function submit() {
         $data = [
             'name' => $this->name,
+            'description' => $this->description,
             'slug' => $this->slug,
             'active' => $this->active,
             'fb_pixel' => $this->fb_pixel,

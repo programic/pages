@@ -16,6 +16,7 @@ class SiteSeeder extends Seeder
     {
         DB::table('sites')->insert([[
             'name' => 'rappers sjors',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue justo in efficitur venenatis. Suspendisse in lectus in lorem tristique accumsan sed id libero. Sed tristique tempus leo, nec lacinia tortor venenatis placerat. Curabitur in fringilla magna. Donec dictum, nibh sed convallis laoreet, leo dui bibendum neque, in rhoncus nibh nulla id dolor. Donec nibh mi, facilisis in elementum quis, luctus vel libero. Praesent ac mauris vulputate, molestie odio eget, dictum ex.',
             'active' => 1,
             'slug' => 'rapper-sjors',
             'template_name' => 'dark_theme',
@@ -64,6 +65,7 @@ class SiteSeeder extends Seeder
 }',
         ], [
             'name' => 'tiesto',
+            'description' => 'Sed egestas dolor id sem sodales venenatis. In vitae hendrerit quam, id sodales ante. Phasellus convallis turpis malesuada mi facilisis, at tempor arcu faucibus. ',
             'active' => 1,
             'slug' => 'tiesto',
             'template_name' => 'light_theme',
