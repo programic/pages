@@ -115,11 +115,14 @@ class SiteGenerator extends Component implements HasForms
 
         if ($this->site) {
             $this->site->update($data);
+            session()->flash('status', 'Your site has been updated');
         } else {
             Site::create($data);
 
-            $this->resetForm();
+            session()->flash('status', 'Your site has been created');
         }
+
+        $this->redirectRoute('sites');
     }
 
     public function resetForm()
