@@ -2729,6 +2729,9 @@ select{
 .max-w-6xl{
 	max-width: 72rem;
 }
+.max-w-2xl{
+	max-width: 42rem;
+}
 .max-w-none{
 	max-width: none;
 }
@@ -3011,6 +3014,9 @@ select{
 }
 .p-6{
 	padding: 1.5rem;
+}
+.p-8{
+	padding: 2rem;
 }
 .p-0{
 	padding: 0px;

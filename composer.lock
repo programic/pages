@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b42f30d7beaf00aeccdf4ecd84d1e8bf",
+    "content-hash": "614e7dc9f0ee79833dd847ebec323b19",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -704,16 +704,16 @@
         },
         {
             "name": "filament/forms",
-            "version": "v2.0.0-beta18",
+            "version": "v2.0.0-beta19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/forms.git",
-                "reference": "511ae0e747e4a04fa30b79c60e3c07c1a5e1ba4e"
+                "reference": "0c4618942159b1092ec57666bbbc1dcfa2b78ebc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-filament/forms/zipball/511ae0e747e4a04fa30b79c60e3c07c1a5e1ba4e",
-                "reference": "511ae0e747e4a04fa30b79c60e3c07c1a5e1ba4e",
+                "url": "https://api.github.com/repos/laravel-filament/forms/zipball/0c4618942159b1092ec57666bbbc1dcfa2b78ebc",
+                "reference": "0c4618942159b1092ec57666bbbc1dcfa2b78ebc",
                 "shasum": ""
             },
             "require": {
@@ -748,7 +748,7 @@
                 "issues": "https://github.com/laravel-filament/filament/issues",
                 "source": "https://github.com/laravel-filament/filament"
             },
-            "time": "2021-09-10T05:47:03+00:00"
+            "time": "2021-09-10T06:10:30+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
