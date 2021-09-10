@@ -19,6 +19,8 @@ class SiteGenerator extends Component implements HasForms
 {
     use InteractsWithForms;
 
+    public Site $site;
+
     public string $name = '';
     public string $slug = '';
     public bool $active = false;
@@ -77,13 +79,30 @@ class SiteGenerator extends Component implements HasForms
         ];
     }
 
+    public function mount(Site $site)
+    {
+        if (! $site) {
+            return;
+        }
+
+        $this->name = $site->name;
+        $this->slug = $site->slug;
+        $this->active = $site->active;
+        $this->fb_pixel = $site->fb_pixel;
+        $this->google_tag_manager = $site->google_tag_manager;
+        $this->seo = $site->seo;
+        $this->content = $site->content;
+
+        $this->site = $site;
+    }
+
     public function render()
     {
         return view('livewire.site-generator');
     }
 
     public function submit() {
-        Site::create([
+        $data = [
             'name' => $this->name,
             'slug' => $this->slug,
             'active' => $this->active,
@@ -91,9 +110,16 @@ class SiteGenerator extends Component implements HasForms
             'google_tag_manager' => $this->google_tag_manager,
             'seo' => $this->seo,
             'content' => $this->content,
-        ]);
+        ];
 
-        $this->resetForm();
+
+        if ($this->site) {
+            $this->site->update($data);
+        } else {
+            Site::create($data);
+
+            $this->resetForm();
+        }
     }
 
     public function resetForm()

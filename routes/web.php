@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/sites', \App\Http\Livewire\Sites::class);
 Route::get('/sites/create', \App\Http\Livewire\SiteGenerator::class);
+Route::get('/sites/{site}', \App\Http\Livewire\SiteGenerator::class)->name('sites.edit');
 
 Route::get('/', function () {
     return view('welcome');
