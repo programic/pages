@@ -19,6 +19,11 @@
     </div>
     @endif
 
+    <div class="flex justify-end mb-4">
+        <a href="{{ route('sites.create') }}" class="py-2 px-4 rounded-md text-white bg-blue-500 hover:bg-blue-700">
+            {{ __('Create site') }}
+        </a>
+    </div>
     <div class="flex flex-col">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
