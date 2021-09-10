@@ -70,7 +70,7 @@ class SiteGenerator extends Component implements HasForms
                 Builder\Block::make('social_media')->schema([
                     Repeater::make('social_media')->schema([
                         TextInput::make('label')->required(),
-                        TextInput::make('url')->required()->url(),
+                        TextInput::make('url')->required()->url()->prefix('https://'),
                     ]),
                 ]),
             ]),
@@ -93,6 +93,11 @@ class SiteGenerator extends Component implements HasForms
             'content' => $this->content,
         ]);
 
+        $this->resetForm();
+    }
+
+    public function resetForm()
+    {
         $this->reset([
             'name',
             'slug',
