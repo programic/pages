@@ -18,11 +18,11 @@ class SiteGenerator extends Component implements HasForms
 {
     use InteractsWithForms;
 
-    public string $page_title = '';
+    public string $name = '';
     public string $slug = '';
-    public bool $published = false;
+    public bool $active = false;
     public string $fb_pixel = '';
-    public string $gtm_id = '';
+    public string $google_tag_manager = '';
 
     public array $seo = [];
     public array $content = [];
@@ -30,14 +30,15 @@ class SiteGenerator extends Component implements HasForms
     protected function getFormSchema(): array
     {
         return [
-            TextInput::make('page_title')
+            TextInput::make('name')
+                ->name('Page title')
                 ->required()
                 ->reactive()
                 ->afterStateUpdated(fn ($get, $set) => $set('slug', Str::slug($get('page_title')))),
             TextInput::make('slug')->required(),
-            Toggle::make('published'),
+            Toggle::make('active'),
             TextInput::make('fb_pixel')->name('Facebook pixel id'),
-            TextInput::make('gtm_id')->name('Google Tag manager id'),
+            TextInput::make('google_tag_manager')->name('Google Tag manager id'),
             Repeater::make('seo')->schema([
                 TextInput::make('key')->name('Meta field key'),
                 TextInput::make('value')->name('Meta field value'),
@@ -78,5 +79,10 @@ class SiteGenerator extends Component implements HasForms
     public function render()
     {
         return view('livewire.site-generator');
+    }
+
+    public function submit() {
+        dd($this->form->getState());
+
     }
 }
