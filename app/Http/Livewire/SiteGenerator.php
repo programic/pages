@@ -8,7 +8,6 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Concerns\InteractsWithForms;
@@ -20,17 +19,16 @@ class SiteGenerator extends Component implements HasForms
 {
     use InteractsWithForms;
 
-    public Site $site;
+    public ?Site $site;
 
-    public string $name = '';
-    public string $description = '';
-    public string $slug = '';
-    public bool $active = false;
-    public string $fb_pixel = '';
-    public string $google_tag_manager = '';
+    public ?string $name = '';
+    public ?string $slug = '';
+    public ?bool $active = false;
+    public ?string $fb_pixel = '';
+    public ?string $google_tag_manager = '';
 
-    public array $seo = [];
-    public array $content = [];
+    public ?array $seo = [];
+    public ?array $content = [];
 
     protected function getFormSchema(): array
     {
@@ -39,9 +37,8 @@ class SiteGenerator extends Component implements HasForms
                 ->name('Page title')
                 ->required()
                 ->reactive()
-                ->afterStateUpdated(fn ($get, $set) => $set('slug', Str::slug($get('name')))),
+                ->afterStateUpdated(fn ($get, $set) => $this->site || $set('slug', Str::slug($get('name')))),
             TextInput::make('slug')->required(),
-            Textarea::make('description'),
             Toggle::make('active'),
             TextInput::make('fb_pixel')->name('Facebook pixel id'),
             TextInput::make('google_tag_manager')->name('Google Tag manager id'),
@@ -63,7 +60,7 @@ class SiteGenerator extends Component implements HasForms
                     Repeater::make('release')->schema([
                         TextInput::make('name')->required(),
                         DatePicker::make('release_date')->required(),
-                        TextInput::make('spotify_url')->url()->prefix('https://'),
+                        TextInput::make('spotify_url')->url(),
                     ])
                 ]),
                 Builder\Block::make('contact')->schema([
@@ -75,21 +72,20 @@ class SiteGenerator extends Component implements HasForms
                 Builder\Block::make('social_media')->schema([
                     Repeater::make('social_media')->schema([
                         TextInput::make('label')->required(),
-                        TextInput::make('url')->required()->url()->prefix('https://'),
+                        TextInput::make('url')->required()->url(),
                     ]),
                 ]),
             ]),
         ];
     }
 
-    public function mount(Site $site)
+    public function mount(?Site $site)
     {
         if (! $site) {
             return;
         }
 
         $this->name = $site->name;
-        $this->description = $site->description;
         $this->slug = $site->slug;
         $this->active = $site->active;
         $this->fb_pixel = $site->fb_pixel;
@@ -108,7 +104,6 @@ class SiteGenerator extends Component implements HasForms
     public function submit() {
         $data = [
             'name' => $this->name,
-            'description' => $this->description,
             'slug' => $this->slug,
             'active' => $this->active,
             'fb_pixel' => $this->fb_pixel,
