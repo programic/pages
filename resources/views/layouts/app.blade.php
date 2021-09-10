@@ -66,3 +66,9 @@
 <livewire:atoms.footer/>
 </body>
 </html>
+<style>
+    body.theme-1 {
+        color: white;
+        background: black;
+    }
+</style>
