@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\PageContentCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,6 +26,13 @@ class Site extends Model
         'seo' => 'array',
         'content' => 'array',
     ];
+
+    public function getContent()
+    {
+        $cast = new PageContentCast();
+
+        return $cast->get($this, 'content', $this->content, $this->attributes);
+    }
 
 
 }

@@ -9,7 +9,7 @@ class PageContent
 
     public function __construct($content)
     {
-        $this->content = json_decode($content);
+        $this->content = json_decode($content, true);
     }
 
     public function getSections()

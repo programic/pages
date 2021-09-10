@@ -9,6 +9,6 @@ class SitesController extends Controller
 {
     public function index(string $slug)
     {
-        return Site::where('slug', $slug)->firstOrFail();
+        dd(Site::where('slug', $slug)->firstOrFail()->content->getSections());
     }
 }

@@ -15,4 +15,14 @@ class PageSection
     {
         return $this->section;
     }
+
+    public function getType()
+    {
+        return $this->section['type'];
+    }
+
+    public function isType($type)
+    {
+        return $this->getType() === $type;
+    }
 }
