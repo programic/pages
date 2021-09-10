@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Site;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
@@ -34,7 +35,7 @@ class SiteGenerator extends Component implements HasForms
                 ->name('Page title')
                 ->required()
                 ->reactive()
-                ->afterStateUpdated(fn ($get, $set) => $set('slug', Str::slug($get('page_title')))),
+                ->afterStateUpdated(fn ($get, $set) => $set('slug', Str::slug($get('name')))),
             TextInput::make('slug')->required(),
             Toggle::make('active'),
             TextInput::make('fb_pixel')->name('Facebook pixel id'),
@@ -82,7 +83,24 @@ class SiteGenerator extends Component implements HasForms
     }
 
     public function submit() {
-        dd($this->form->getState());
+        Site::create([
+            'name' => $this->name,
+            'slug' => $this->slug,
+            'active' => $this->active,
+            'fb_pixel' => $this->fb_pixel,
+            'google_tag_manager' => $this->google_tag_manager,
+            'seo' => $this->seo,
+            'content' => $this->content,
+        ]);
 
+        $this->reset([
+            'name',
+            'slug',
+            'active',
+            'fb_pixel',
+            'google_tag_manager',
+            'seo',
+            'content',
+        ]);
     }
 }

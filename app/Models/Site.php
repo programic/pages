@@ -21,5 +21,10 @@ class Site extends Model
         'content',
     ];
 
+    protected $casts = [
+        'seo' => 'array',
+        'content' => 'array',
+    ];
+
 
 }

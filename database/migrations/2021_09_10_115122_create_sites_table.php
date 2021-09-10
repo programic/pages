@@ -20,12 +20,12 @@ class CreateSitesTable extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('active')->default(false);
-            $table->string('slug');
-            $table->string('template_name');
-            $table->string('favicon');
-            $table->string('fb_pixel');
-            $table->string('google_tag_manager');
-            $table->text('seo');
+            $table->string('slug')->unique();
+            $table->string('template_name')->nullable();
+            $table->string('favicon')->nullable();
+            $table->string('fb_pixel')->nullable();
+            $table->string('google_tag_manager')->nullable();
+            $table->text('seo')->nullable();
             $table->text('content');
             $table->timestamps();
         });
