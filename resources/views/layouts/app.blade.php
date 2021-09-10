@@ -20,7 +20,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
 
-    <body>
+    <body class="bg-black text-white flex flex-col h-screen w-screen justify-between">
         <header class="relative bg-indigo-800">
             <div class="absolute inset-0">
                 <img class="w-full h-full object-cover" src="{{ url('img/background.jpg') }}" alt="">
@@ -33,7 +33,7 @@
             </div>
         </header>
 
-        <div>
+        <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
             <section id="about">
                 <h1>About</h1>
                 <p>
@@ -54,14 +54,13 @@
             </section>
         </div>
 
-        <footer class="relative bg-red-800">
+        <footer class="relative bg-red-800 ">
             <div class="absolute inset-0">
                 <img class="w-full h-full object-cover" src="{{ url('img/footer.jpg') }}">
                 <div class="absolute inset-0 bg-red-800 mix-blend-multiply" aria-hidden="true"></div>
             </div>
 
-
-            <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+            <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8 text-center">
                 <div class="flex w-full text-white justify-between">
                     <div class="flex-initial ">
                         <h2 class="text-1xl font-extrabold tracking-tight text-white sm:text-1xl lg:text-2xl">Management</h2>
@@ -74,6 +73,8 @@
                         <span class="mt-6 text-xl text-indigo-100 max-w-3xl">promo@programic.com</span>
                     </div>
                 </div>
+
+                <span class="text-white">Made with ❤️ by <a href="https://programic.com">Programic</a></span>
             </div>
         </footer>
     </body>
