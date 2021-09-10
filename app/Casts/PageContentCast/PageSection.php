@@ -13,7 +13,7 @@ class PageSection
 
     public function getData()
     {
-        return $this->section;
+        return $this->section['data'];
     }
 
     public function getType()
@@ -24,5 +24,12 @@ class PageSection
     public function isType($type)
     {
         return $this->getType() === $type;
+    }
+
+    public function render()
+    {
+        return view("components.themes.default.{$this->getType()}", [
+            'section' => $this,
+        ]);
     }
 }

@@ -21,7 +21,9 @@ class PageContent
 
     public function render()
     {
-        return view('site');
+        return view('site', [
+            'content' => $this,
+        ]);
     }
 
 }
