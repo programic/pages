@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Livewire\Pages\Test;
+use App\Http\Controllers\SitesController;
+use App\Http\Livewire\SiteGenerator;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Test::class);
+Route::get('/sites', \App\Http\Livewire\Sites::class)->name('sites');
+Route::get('/sites/create', \App\Http\Livewire\SiteGenerator::class)->name('sites.create');
+Route::get('/sites/{site}/edit', \App\Http\Livewire\SiteGenerator::class)->name('sites.edit');
+
+Route::get('/sites/{slug}', [SitesController::class, 'index']);
+
