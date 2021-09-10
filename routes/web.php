@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SitesController;
+use App\Http\Livewire\SiteGenerator;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/sites/create', \App\Http\Livewire\SiteGenerator::class);
+Route::get('/sites/create', SiteGenerator::class);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/sites/{slug}', [SitesController::class, 'index']);
+
