@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "614e7dc9f0ee79833dd847ebec323b19",
+    "content-hash": "8a94709c93a646a51677e40bf6298c23",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -704,16 +704,16 @@
         },
         {
             "name": "filament/forms",
-            "version": "v2.0.0-beta19",
+            "version": "v2.0.0-beta20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/forms.git",
-                "reference": "0c4618942159b1092ec57666bbbc1dcfa2b78ebc"
+                "reference": "1f26b7e280145d665b98b4f9492f6846518c97cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-filament/forms/zipball/0c4618942159b1092ec57666bbbc1dcfa2b78ebc",
-                "reference": "0c4618942159b1092ec57666bbbc1dcfa2b78ebc",
+                "url": "https://api.github.com/repos/laravel-filament/forms/zipball/1f26b7e280145d665b98b4f9492f6846518c97cc",
+                "reference": "1f26b7e280145d665b98b4f9492f6846518c97cc",
                 "shasum": ""
             },
             "require": {
@@ -748,7 +748,7 @@
                 "issues": "https://github.com/laravel-filament/filament/issues",
                 "source": "https://github.com/laravel-filament/filament"
             },
-            "time": "2021-09-10T06:10:30+00:00"
+            "time": "2021-09-10T12:19:57+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -5996,16 +5996,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.12.0",
+            "version": "2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "74dcc32a2895a126d1e5f2cd3bbab499cac66db1"
+                "reference": "567b0a4ab04367603e61729b0ca133fb7b4819db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/74dcc32a2895a126d1e5f2cd3bbab499cac66db1",
-                "reference": "74dcc32a2895a126d1e5f2cd3bbab499cac66db1",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/567b0a4ab04367603e61729b0ca133fb7b4819db",
+                "reference": "567b0a4ab04367603e61729b0ca133fb7b4819db",
                 "shasum": ""
             },
             "require": {
@@ -6068,7 +6068,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-08-24T09:53:54+00:00"
+            "time": "2021-09-10T07:19:07+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -6736,33 +6736,33 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.13.0",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea"
+                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/be1996ed8adc35c3fd795488a653f4b518be70ea",
-                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
+                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.2",
-                "php": "^7.2 || ~8.0, <8.1",
+                "php": "^7.2 || ~8.0, <8.2",
                 "phpdocumentor/reflection-docblock": "^5.2",
                 "sebastian/comparator": "^3.0 || ^4.0",
                 "sebastian/recursion-context": "^3.0 || ^4.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "^6.0",
+                "phpspec/phpspec": "^6.0 || ^7.0",
                 "phpunit/phpunit": "^8.0 || ^9.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11.x-dev"
+                    "dev-master": "1.x-dev"
                 }
             },
             "autoload": {
@@ -6797,9 +6797,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/1.13.0"
+                "source": "https://github.com/phpspec/prophecy/tree/1.14.0"
             },
-            "time": "2021-03-17T13:42:18+00:00"
+            "time": "2021-09-10T09:02:12+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -8247,5 +8247,5 @@
         "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

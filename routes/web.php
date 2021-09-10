@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/sites/create', \App\Http\Livewire\SiteGenerator::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
